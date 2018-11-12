@@ -78,10 +78,10 @@ app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
     stack: config.env === 'development' ? err.stack : {}
   })
 );
+
 app.listen(config.port, () => {
     console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
   });
-
 // Require our routes into the application.
 app.get('*', (req, res) => res.status(200).send({
   message: 'Contact Api Challenge.',
