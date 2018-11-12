@@ -4,21 +4,21 @@
     "username": "postgres",
     "password": "root",
     "database": "postgres",
-    "host": "127.0.0.1",
+    "host": "https://contactrest-api.herokuapp.com",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "root",
     "database": "postgres",
-    "host": "127.0.0.1",
+    "host": "https://contactrest-api.herokuapp.com",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "root",
     "database": "postgres",
-    "host": "127.0.0.1",
+    "host": "https://contactrest-api.herokuapp.com",
     "dialect": "postgres"
   }
 }
