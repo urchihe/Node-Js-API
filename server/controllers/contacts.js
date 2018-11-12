@@ -34,8 +34,8 @@ function create(req, res) {
         phone: req.body.phone,
         mobile: req.body.mobile,
         address: req.body.address,
-        userId: req.user.id, }).then((newContact) => {
-    res.status(201).json({ message:'Contact Added successfully', newContact});
+        userId: req.user.id, }).then((Contact) => {
+    res.status(201).json({ message:'New Contact Added successfully', Contact});
   }).catch((e) => {
     res.status(500).json({ error: e.message });
   });
