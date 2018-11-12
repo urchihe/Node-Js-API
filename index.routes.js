@@ -15,6 +15,10 @@ router.get('/health-check', (req, res) =>
 router.use('/user', userRoutes);
 router.use('/contact', contactRoutes);
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> af53d3adc1c2a945c5b22e59e47c03885399a455
 
 
 module.exports = router;
