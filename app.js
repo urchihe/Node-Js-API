@@ -17,7 +17,12 @@ const APIError = require('./server/controllers/helpers/APIError');
 const { Client } = require('pg');
 
 const client = new Client({
+<<<<<<< HEAD
   connectionString: process.env.DATABASE_URL
+=======
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+>>>>>>> d7e997d41bb483a3b3265cd374c046e3d11077c2
 });
 
 client.connect();
