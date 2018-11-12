@@ -14,7 +14,21 @@ const helmet = require('helmet');
 const winstonInstance = require('./server/config/winston');
 const routes = require('./index.routes');
 const APIError = require('./server/controllers/helpers/APIError');
+const { Client } = require('pg');
 
+const client = new Client({
+  connectionString: process.env.DATABASE_URL
+});
+
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 const app = express();
 
@@ -71,7 +85,6 @@ app.use((req, res, next) => {
   const err = new APIError('API not found', httpStatus.NOT_FOUND);
   return next(err);
 });
-
 app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
   res.status(err.status).json({
     message: err.isPublic ? err.message : httpStatus[err.status],
