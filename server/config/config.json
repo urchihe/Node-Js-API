@@ -14,7 +14,7 @@
     "host": "ec2-174-129-227-116.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
-  "production":{
+  "production": {
     "use_env_variable": "DATABASE_URL"
-  },
+  }
 }
