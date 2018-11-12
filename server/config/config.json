@@ -1,25 +1,5 @@
-
 {
-  "development": {
-    "username": "postgres",
-    "password": "root",
-    "database": "postgres",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "postgres",
-    "password": "root",
-    "database": "postgres",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
   "production": {
-    "username": "fgzkuabywoioaq",
-    "password": "8b217020ad851af3967d4824e610b4a1f9d66e3838cf92ee9bafa394c71dcce1",
-    "database": "da6adknbdt7pp2",
-    "host": "ec2-174-129-227-116.compute-1.amazonaws.com",
-    "use_env_variable": "postgres://fgzkuabywoioaq:8b217020ad851af3967d4824e610b4a1f9d66e3838cf92ee9bafa394c71dcce1@ec2-174-129-227-116.compute-1.amazonaws.com:5432/da6adknbdt7pp2",
-    "dialect": "postgres"
+     "use_env_variable": "DATABASE_URL"
   }
 }
