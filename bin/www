@@ -1,0 +1,8 @@
+const http = require('http');
+const app = require('../app'); // The express app we just created
+const config = require('../server/config/config'); 
+
+app.set('port', config.port);
+
+const server = http.createServer(app);
+server.listen(config.port);
