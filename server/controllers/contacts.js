@@ -84,7 +84,7 @@ function retrieve(req, res) {
     Contact.findById(req.params.contactId)
     .then(contact => {
       if (!contact) {
-        return res.status(204).send({
+        return res.status(404).send({
           message: 'Contact Not Found',
         });
       }else if(contact.userId !== req.user.id){
