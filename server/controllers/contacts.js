@@ -80,13 +80,8 @@ function star(req, res) {
     })
     .catch(error => res.status(400).send(error));
 }
-function retrieve(req, res, next, id) {
-     Contact.findOne({
-      where:{
-        id:req.params.contactId,
-        userId:req.user.id,
-      },
-    })
+function retrieve(req, res) {
+    Contact.findOne(req.params.contactId)
     .then(contact => {
       if (!contact) {
         return res.status(404).send({
