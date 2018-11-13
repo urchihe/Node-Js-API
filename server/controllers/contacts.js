@@ -81,7 +81,7 @@ function star(req, res) {
     .catch(error => res.status(400).send(error));
 }
 function retrieve(req, res) {
-    Contact.findOne(req.params.contactId)
+    Contact.findById(req.params.contactId)
     .then(contact => {
       if (!contact) {
         return res.status(404).send({
