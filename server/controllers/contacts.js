@@ -75,7 +75,7 @@ function star(req, res) {
         });
       }
         contact.update({star:true})
-        .then(starContact => res.status(200).send({ message:'Contact Star successfully', starContact,}))
+        .then(starContact => res.status(200).send({ message:'Contact Stared successfully', starContact,}))
         .catch(error => res.status(400).send(error));
     })
     .catch(error => res.status(400).send(error));
