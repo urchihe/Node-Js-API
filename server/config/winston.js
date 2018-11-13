@@ -11,6 +11,7 @@ const logger = winston.createLogger({
       json: true,
       colorize: true
     })
+     ]
 });
 
 module.exports = logger;
