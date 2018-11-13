@@ -19,8 +19,8 @@ router.get('*', (req, res) =>
 );
 
 // mount user routes at /users
-router.use('api/user', userRoutes);
-router.use('api/contact', contactRoutes);
+router.use('/api/user', userRoutes);
+router.use('/api/contact', contactRoutes);
 
 
 
