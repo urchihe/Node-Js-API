@@ -3,7 +3,7 @@ const Contact = require('../models').Contact;
 function load(req, res) {
   Contact.findById(req.params.contactId).then((contact) => {
     if (!contact) {
-      res.status(404).json({ error: 'No Contact Created by you found' });
+      res.status(404).send({ error: 'No Contact Created by you found' });
     } else {
       res.status(201).json(contact);
     }
@@ -18,7 +18,7 @@ function list(req, res) {
         },
       }).then((contact) => {
     if (!contact) {
-     return res.status(404).json({error: "No Contact Created by you found"});
+     return res.status(404).send({error: 'No Contact Created by you found'});
     } else {
       res.status(201).json(contact);
     }
