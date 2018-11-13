@@ -84,11 +84,11 @@ function retrieve(req, res) {
     Contact.findById(req.params.contactId)
     .then(contact => {
       if (!contact) {
-        return res.status(204).json({
+        return res.status(204).send({
           message: 'Contact Not Found',
         });
       }else if(contact.userId !== req.user.id){
-        return res.status(204).json({
+        return res.status(401).send({
           message: 'Unauthoried to view this contact',
         });
       }
