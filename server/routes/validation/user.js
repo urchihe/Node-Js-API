@@ -14,7 +14,7 @@ module.exports = {
                   
       password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).description('Password is required').required(),
                  
-      email: Joi.string().regex(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).description('Email is required').required(),
+      email: Joi.string().email({ minDomainAtoms: 2 }).description('Email is required').required(),
     },
   },
   login: {
@@ -30,7 +30,7 @@ module.exports = {
     body: {
       username: Joi.string().alphanum().min(3).max(30).required(),
       password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
-      email: Joi.string().regex(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).description('Email is required').required(),
+      email: Joi.string().email({ minDomainAtoms: 2 }).description('Email is required').required(),
     },
   },
 
