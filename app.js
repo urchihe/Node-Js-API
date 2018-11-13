@@ -47,7 +47,7 @@ if (config.env === 'development') {
     colorStatus: true // Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
   }));
 }
-app.get('*', (req, res) => res.status(200).send({
+router.get('*', (req, res) => res.status(200).send({
   message: 'Contact Api Challenge.',
 }));
 app.use('/api', routes);
