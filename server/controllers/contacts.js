@@ -108,7 +108,7 @@ function remove(req, res) {
       }
          contact.destroy()
         .then(() => {
-         return res.status(204).send({ message:'Deleted successfully'})
+         return res.status(200).send({"message":"Deleted successfully"})
        })
         
         .catch(error => res.status(400).send(error));
