@@ -10,7 +10,7 @@ module.exports = {
 
   create: {
     body: {
-      fullname: Joi.string().alphanum().min(3).max(100).required(),
+      fullname: Joi.string().min(3).max(100).required(),
       email: Joi.string().regex(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).description('Email is required').required(),
       phone: Joi.number().integer().min(10).required(),
       mobile: Joi.number().integer().min(10).required(),
@@ -20,10 +20,10 @@ module.exports = {
 
   update: {
     body: {
-      fullname: Joi.string().alphanum().min(3).max(100).required(),
+      fullname: Joi.string().min(3).max(100).required(),
       email: Joi.string().regex(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).description('Email is required').required(),
-      phone: Joi.number().integer().min(10).max(11).required(),
-      mobile: Joi.number().integer().min(10).max(11).required(),
+      phone: Joi.number().integer().min(10).required(),
+      mobile: Joi.number().integer().min(10).required(),
       address:Joi.string().alphanum().min(3).max(100).required(),
     },
   },
