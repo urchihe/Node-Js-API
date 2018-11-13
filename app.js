@@ -14,6 +14,7 @@ const helmet = require('helmet');
 const winstonInstance = require('./server/config/winston');
 const routes = require('./index.routes');
 const APIError = require('./server/controllers/helpers/APIError');
+const router = express.Router();
 
 
 const app = express();
@@ -60,12 +61,6 @@ app.use((err, req, res, next) => {
   }
   return next(err);
 });
-
-if (config.env !== 'test') {
-  app.use(expressWinston.errorLogger({
-    winstonInstance
-  }));
-}
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new APIError('API not found', httpStatus.NOT_FOUND);
@@ -79,7 +74,9 @@ app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
 );
 
 // Require our routes into the application.
-app.get('*', (req, res) => res.status(200).send({
+router.route('/')
+
+  .get('*', (req, res) => res.status(200).send({
   message: 'Contact Api Challenge.',
 }));
 
