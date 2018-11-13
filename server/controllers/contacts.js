@@ -81,11 +81,16 @@ function star(req, res) {
     .catch(error => res.status(400).send(error));
 }
 function retrieve(req, res) {
-    Contact.findById(req.params.contactId)
+     Contact.findOne({
+      where:{
+        id:req.params.contactId,
+        userId:req.user.id,
+      },
+    })
     .then(contact => {
       if (!contact) {
         return res.status(404).send({
-          message: 'Todo Not Found',
+          message: 'Contact Not Found',
         });
       }
       return res.status(200).send(contact);
