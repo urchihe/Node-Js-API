@@ -80,7 +80,7 @@ function star(req, res) {
     })
     .catch(error => res.status(400).send(error));
 }
-function retrieve(req, res) {
+function retrieve(req, res, next, id) {
      Contact.findOne({
       where:{
         id:req.params.contactId,
@@ -95,7 +95,7 @@ function retrieve(req, res) {
       }
       return res.status(200).send(contact);
     })
-    .catch(error => res.status(400).send(contact));
+    .catch(error => res.status(400).send(error));
 }
 
 function remove(req, res) {
