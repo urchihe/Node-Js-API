@@ -87,7 +87,7 @@ function retrieve(req, res) {
         return res.status(204).json({
           message: 'Contact Not Found',
         });
-      }else if(contact.userId == req.user.id){
+      }else if(contact.userId !== req.user.id){
         return res.status(204).json({
           message: 'Unauthoried to view this contact',
         });
