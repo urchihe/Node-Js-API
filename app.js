@@ -74,9 +74,8 @@ app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
 );
 
 // Require our routes into the application.
-router.route('/')
 
-  .get('*', (req, res) => res.status(200).send({
+router.get('*', (req, res) => res.status(200).send({
   message: 'Contact Api Challenge.',
 }));
 
