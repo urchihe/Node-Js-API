@@ -8,8 +8,8 @@ const logger = winston.createLogger({
       ),
   transports: [
      new (winston.transports.Console)({
-      json: true,
-      colorize: true
+      winston.format.colorize(),
+      winston.format.json()
     })
      ]
 });
