@@ -29,5 +29,7 @@ router.route('/:contactId/star')
   /** PATCH /api/star/:contactId - PATCH contact with star */
   .patch(expressJwt({ secret: config.jwtSecret }), validate(paramValidation.load), contactController.star)
 
+  router.param('contactId', contactController.load);
+
 
 module.exports = router;
