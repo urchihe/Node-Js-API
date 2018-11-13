@@ -7,11 +7,10 @@ const logger = winston.createLogger({
         winston.format.json()
       ),
   transports: [
-     new (winston.transports.Console)({
-      winston.format.colorize(),
-      winston.format.json()
-    })
-     ]
+     logger.add(new winston.transports.Console({
+      format: winston.format.simple()
+    }));
+  ]
 });
 
 module.exports = logger;
