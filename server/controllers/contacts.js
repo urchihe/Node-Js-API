@@ -56,7 +56,7 @@ function update(req, res, next) {
       }
       
         contact.update(req.body, { fields: Object.keys(req.body) })
-        .then(updatedContact => res.status(200).send({ message:'Updated successfully', updatedContact}))
+        .then(updatedContact => res.status(200).send({ message:'Contact Updated Successfully', updatedContact}))
         .catch(error => res.status(400).send(error));
     })
     .catch(error => res.status(400).send(error));
@@ -108,7 +108,7 @@ function remove(req, res) {
       }
          contact.destroy()
         .then(() => {
-         return res.status(200).json({message:"Deleted successfully"})
+         return res.status(200).json({message:"Contact Deleted Successfully"})
        })
         
         .catch(error => res.status(400).send(error));
