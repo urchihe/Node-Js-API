@@ -10,10 +10,13 @@ const router = express.Router(); // eslint-disable-line new-cap
 router.get('/health-check', (req, res) =>
   res.send('OK')
 );
+router.get('*', (req, res) =>
+  res.send('Welcome To Contact Api Chanllenge! Api Built By UCHENNA IHE @ urchihe@gmail.com')
+);
 
 // mount user routes at /users
-router.use('/user', userRoutes);
-router.use('/contact', contactRoutes);
+router.use('api/user', userRoutes);
+router.use('api/contact', contactRoutes);
 
 
 
