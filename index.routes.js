@@ -11,7 +11,11 @@ router.get('/health-check', (req, res) =>
   res.send('OK')
 );
 router.get('*', (req, res) =>
-  res.send('Welcome To Contact Api Chanllenge! Api Built By UCHENNA IHE @ urchihe@gmail.com')
+  res.send("Welcome To Contact Api Challenge! Api Built By UCHENNA IHE urchihe@gmail.com" + '\n' +
+  	"end points are" + '\n' + "1.	POST: /api/user/signup" + '\n' + "2.	POST: /api/user/signin" + '\n' + "3.	POST: /api/contact"
+  	+ '\n' + "4.	GET: /api/contact" + '\n' + "5.	GET: /api/contact/<contact id>" + '\n' + "6.	PATCH: /api/contact/<contact id>"
+  	+ '\n' + "7.	DELETE: /api/contact/<contact id>" + '\n' + "8.	PATCH: /api/contact/<contact id>/star" + '\n' + "Thanks!!!"
+  	)
 );
 
 // mount user routes at /users
